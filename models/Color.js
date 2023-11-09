@@ -2,15 +2,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ColorSchema = new Schema({
-    message: {
+    color1: {
         type: String,
         required: true,
     },
-    timestamp: {
-        type: Date,
-        default: Date.now,
+    color2: {
+        type: String,
+        required: true,
     },
-    username: {
+    color3: {
+        type: String,
+        required: true,
+    },
+    color4: {
+        type: String,
+        required: true,
+    },
+    color5: {
         type: String,
         required: true,
     },
