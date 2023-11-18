@@ -25,7 +25,7 @@ const index = async (req, res) => {
             // colors.push(colormix)
             res.json({
                 "status": "success",
-                "message": "GETTING colors",
+                "message": "GETTING colors" + req.query.color1,
                 "data": {
                     "colors": req.query.color1
                 }
