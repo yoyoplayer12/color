@@ -10,24 +10,24 @@ const index = async (req, res) => {
     let colors = [];
     if(req.query.color1) {
         try {
-            let color1 = await Color.find({ color1: req.query.color1 });
-            let color2 = await Color.find({ color2: req.query.color2 });
-            let color3 = await Color.find({ color3: req.query.color3 });
-            let color4 = await Color.find({ color4: req.query.color4 });
-            let color5 = await Color.find({ color5: req.query.color5 });
-            // create an array of colors 1 to 5
-            colormix = [];
-            colormix.push(color1);
-            colormix.push(color2);
-            colormix.push(color3);
-            colormix.push(color4);
-            colormix.push(color5);
-            colors.push(colormix)
+            // let color1 = await Color.find({ color1: req.query.color1 });
+            // let color2 = await Color.find({ color2: req.query.color2 });
+            // let color3 = await Color.find({ color3: req.query.color3 });
+            // let color4 = await Color.find({ color4: req.query.color4 });
+            // let color5 = await Color.find({ color5: req.query.color5 });
+            // // create an array of colors 1 to 5
+            // colormix = [];
+            // colormix.push(color1);
+            // colormix.push(color2);
+            // colormix.push(color3);
+            // colormix.push(color4);
+            // colormix.push(color5);
+            // colors.push(colormix)
             res.json({
                 "status": "success",
                 "message": "GETTING colors",
                 "data": {
-                    "colors": colors
+                    "colors": req.query.color1
                 }
             });
         } catch (err) {
