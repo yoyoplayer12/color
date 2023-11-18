@@ -32,7 +32,6 @@ const index = async (req, res) => {
             }
         }
     }
-    res.json(results);
 };
 
 const create = async(req, res) => {
