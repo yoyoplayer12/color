@@ -9,7 +9,7 @@ const index = async (req, res) => {
                 status: "success",
                 message: "GETTING colors",
                 data: [{
-                    messages: colors
+                    colors
                 }],
             });
         }
