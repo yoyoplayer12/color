@@ -15,15 +15,19 @@ const index = async (req, res) => {
             let color3 = await Color.find({ color3: req.query.color3 });
             let color4 = await Color.find({ color4: req.query.color4 });
             let color5 = await Color.find({ color5: req.query.color5 });
+            // create an array of colors 1 to 5
+            colormix = [];
+            colormix.push(color1);
+            colormix.push(color2);
+            colormix.push(color3);
+            colormix.push(color4);
+            colormix.push(color5);
+            colors.push(colormix)
             res.json({
                 "status": "success",
                 "message": "GETTING colors",
                 "data": {
-                    "color1": color1,
-                    "color2": color2,
-                    "color3": color3,
-                    "color4": color4,
-                    "color5": color5
+                    "colors": colors
                 }
             });
         } catch (err) {
