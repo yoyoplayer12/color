@@ -1,4 +1,4 @@
-//require the messages model
+//require the color model
 const Color = require("../../../models/Color");
 
 const index = async (req, res) => {
@@ -9,11 +9,11 @@ const index = async (req, res) => {
     let color5 = req.query.color5;
     if(req.query.color1 || req.query.color2 || req.query.color3 || req.query.color4 || req.query.color5) {
         try {
-            let color1 = await Message.find({ color1: req.query.color1 });
-            let color2 = await Message.find({ color2: req.query.color2 });
-            let color3 = await Message.find({ color3: req.query.color3 });
-            let color4 = await Message.find({ color4: req.query.color4 });
-            let color5 = await Message.find({ color5: req.query.color5 });
+            let color1 = await Color.find({ color1: req.query.color1 });
+            let color2 = await Color.find({ color2: req.query.color2 });
+            let color3 = await Color.find({ color3: req.query.color3 });
+            let color4 = await Color.find({ color4: req.query.color4 });
+            let color5 = await Color.find({ color5: req.query.color5 });
             if (color1.length > 0) {
                 res.json({
                     "status": "success 1",
