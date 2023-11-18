@@ -2,39 +2,29 @@
 const Color = require("../../../models/Color");
 
 const index = async (req, res) => {
-    let color1 = req.query.color1;
-    let color2 = req.query.color2;
-    let color3 = req.query.color3;
-    let color4 = req.query.color4;
-    let color5 = req.query.color5;
-    let colors = [];
+    let colors;
     if(req.query.color1) {
-        try {
-            // let color1 = await Color.find({ color1: req.query.color1 });
-            // let color2 = await Color.find({ color2: req.query.color2 });
-            // let color3 = await Color.find({ color3: req.query.color3 });
-            // let color4 = await Color.find({ color4: req.query.color4 });
-            // let color5 = await Color.find({ color5: req.query.color5 });
-            // // create an array of colors 1 to 5
-            // colormix = [];
-            // colormix.push(color1);
-            // colormix.push(color2);
-            // colormix.push(color3);
-            // colormix.push(color4);
-            // colormix.push(color5);
-            // colors.push(colormix)
-            res.json({
-                "status": "success",
-                "message": "GETTING colors" + req.query.color1,
-                "data": {
-                    "colors": req.query.color1
-                }
-            });
+        try{
+            let colors = await Color.find({ color1: req.query.color1 });
+            if (colors.length > 0) {
+                res.json({
+                    "status": "success",
+                    "message": "GETTING colorarray for color" + req.query.color1,
+                    "data": {
+                        "messages": colors
+                    }
+                });
+            } else {
+                res.json({
+                    "status": "error",
+                    "message": "No colorarray found for color " + req.query.color1
+                });
+            }
         } catch (err) {
             console.error(err);
             res.json({
                 "status": "error",
-                "message": "An error occurred while getting the colors."
+                "message": "An error occurred while getting the colorarray."
             });
         }
     }
@@ -45,7 +35,7 @@ const index = async (req, res) => {
                 status: "success",
                 message: "GETTING colors",
                 data: [{
-                    messages: color1,color2,color3,color4,color5
+                    messages: colors
                 }],
             });
         }
