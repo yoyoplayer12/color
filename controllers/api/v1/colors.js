@@ -16,7 +16,7 @@ const index = async (req, res) => {
             let color5 = await Message.find({ color5: req.query.color5 });
             if (color1.length > 0) {
                 res.json({
-                    "status": "success",
+                    "status": "success 1",
                     "message": "GETTING colors for color1 " + req.query.color1,
                     "data": {
                         "color": color1
@@ -24,14 +24,14 @@ const index = async (req, res) => {
                 });
             } else {
                 res.json({
-                    "status": "error",
+                    "status": "error 2",
                     "message": "No color found for color " + req.query.color1
                 });
             }
 
             if (color2.length > 0) {
                 res.json({
-                    "status": "success",
+                    "status": "success 3",
                     "message": "GETTING colors for color2 " + req.query.color2,
                     "data": {
                         "color": color2
@@ -39,14 +39,14 @@ const index = async (req, res) => {
                 });
             } else {
                 res.json({
-                    "status": "error",
+                    "status": "error 4",
                     "message": "No color found for color " + req.query.color2
                 });
             }
 
             if (color3.length > 0) {
                 res.json({
-                    "status": "success",
+                    "status": "success 5",
                     "message": "GETTING colors for color3 " + req.query.color3,
                     "data": {
                         "color": color3
@@ -54,14 +54,14 @@ const index = async (req, res) => {
                 });
             } else {
                 res.json({
-                    "status": "error",
+                    "status": "error 6",
                     "message": "No color found for color " + req.query.color3
                 });
             }
 
             if (color4.length > 0) {
                 res.json({
-                    "status": "success",
+                    "status": "success 7",
                     "message": "GETTING colors for color4 " + req.query.color4,
                     "data": {
                         "color": color4
@@ -69,14 +69,14 @@ const index = async (req, res) => {
                 });
             } else {
                 res.json({
-                    "status": "error",
+                    "status": "error 8",
                     "message": "No color found for color " + req.query.color4
                 });
             }
 
             if (color5.length > 0) {
                 res.json({
-                    "status": "success",
+                    "status": "success 9",
                     "message": "GETTING colors for color4 " + req.query.color5,
                     "data": {
                         "color": color5
@@ -84,14 +84,14 @@ const index = async (req, res) => {
                 });
             } else {
                 res.json({
-                    "status": "error",
+                    "status": "error 10",
                     "message": "No color found for color " + req.query.color5
                 });
             }
         } catch (err) {
             console.error(err);
             res.json({
-                "status": "error",
+                "status": "error 11",
                 "message": "An error occurred while getting the colors."
             });
         }
@@ -100,7 +100,7 @@ const index = async (req, res) => {
         try{
             colors = await Color.find({});
             res.json({
-                status: "success",
+                status: "success 12",
                 message: "GETTING colors",
                 data: [{
                     messages: color1,color2,color3,color4,color5
@@ -110,7 +110,7 @@ const index = async (req, res) => {
         catch(err){
             console.error(err);
             res.json({
-                status: "error",
+                status: "error 13",
                 message: "An error occurred while getting the colors.",
             });
         }
