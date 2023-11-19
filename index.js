@@ -6,7 +6,7 @@ const port = 3000;
 
 //connect to mongodb
 // const credentials = "/etc/secrets/credentials.pem";
-const credentials = process.env.credentials;
+const credentials = process.env.creds;
 mongoose.connect("mongodb+srv://colors.f9hcb3r.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority", {
     tlsCertificateKeyFile: credentials,
 });
